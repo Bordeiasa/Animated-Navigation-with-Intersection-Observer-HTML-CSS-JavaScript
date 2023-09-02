@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    background: #263238;
+
+    position: sticky;
+    top: 0;
+}
+
+nav.active {
+    background: #fff;
+}
+
+nav.active .nav-list li a {
+    color: #222;
+}
+
+.nav-list {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list li::before {
+    content: "";
+    width: 105%;
+    height: 5px;
+    background: royalblue;
+    position: absolute;
+    bottom: -10%;
+    left: -2%;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+.nav-list li:hover::before,
+.nav-list li.active::before {
+    transform: scaleX(1);
+}
+
+.nav-list li a {
+    text-decoration: none;
+    font: 300 1.5rem sans-serif;
+    color: #fff;
+}
+
+section {
+    height: 100vh;
+}
+
+#base {
+    background: #263238 url("./bg.svg") no-repeat center center / cover;
+}
+
+#home {
+    background: mediumspringgreen url("./bg.svg") no-repeat center center;
+}
+
+#work {
+    background: dodgerblue;
+}
+
+#about {
+    background: salmon;
+}
+
+#contact {
+    background: mediumaquamarine;
+}
